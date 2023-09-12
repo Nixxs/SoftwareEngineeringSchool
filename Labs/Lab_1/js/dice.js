@@ -3,7 +3,7 @@ function RollDice(faces){
     let randomNumber = Math.random();
     let result = Math.floor((randomNumber * faces) + min)
 
-    let outputMessage = "D6: " + result;
+    let outputMessage = "D" + faces + ": " + result;
     document.getElementById("resultOutput").innerHTML = outputMessage;
     
     return result;
