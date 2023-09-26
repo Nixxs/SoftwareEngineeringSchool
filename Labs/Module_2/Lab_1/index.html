@@ -1,16 +1,117 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Module 2 - Lab 1: HTML</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="The software engineering course module 2 - lab 1 html index file"
+    />
+    <meta
+      name="keywords"
+      content="HTML, CSS, JavaScript, software engineering, module 2, lab 1"
+    />
+    <meta name="author" content="nicholas chai" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav>
         <!-- works like <a href="/index.html">Home</a> -->
         <a href="/">Home</a>
+        <a href="/form.html">Form</a>
+        <a href="./form.html">./Form</a>
       </nav>
     </header>
-    <main>
-    </main>
+
+    <h1>Module 2 - Lab 1: HTML Practice</h1>
+    <article>
+      <h2>1. Learning All the HTML things..</h2>
+
+      <div>apple</div>
+      <div>orange</div>
+      <div>banana</div>
+
+      <span>one</span>
+      <span>two</span>
+      <span>three</span>
+
+      <p>p represents paragraph</p>
+      <pre>
+        Text     in a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both spaces and
+        line breaks
+      </pre>
+
+      <ul>
+        <li>Wheels</li>
+        <li>Suspension</li>
+        <li>Engine</li>
+        <li>Transmission</li>
+      </ul>
+
+      <ol>
+        <li>Clutch</li>
+        <li>Brake</li>
+        <li>Accelerator</li>
+        <li>Steering</li>
+      </ol>
+    </article>
+
+    <article>
+      <h2>2. Other HTML things like tables and stuff</h2>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">First header</th>
+            <th>Second header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>First cell - first row</td>
+            <td>Second cell - first row</td>
+            <td>third cell - first row</td>
+          </tr>
+          <tr>
+            <td>First cell - second row</td>
+            <td>Second cell - second row</td>
+            <td rowspan="2">third cell - second row</td>
+          </tr>
+          <tr>
+            <td>First cell - third row</td>
+            <td>Second cell - third row</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article>
+      <h2>3. Multimedia in HTML</h2>
+      <img src="https://picsum.photos/200/300" alt="" />
+
+      <video autoplay width="250">
+        <source src="/assets/flower.webm" type="video/webm" />
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+
+      <audio controls src="/assets/t-rex-roar.mp3">
+        Your browser does not support the
+        <code>audio</code> element.
+      </audio>
+    </article>
+
+    <main></main>
     <footer>Copyright 2021 &copy;</footer>
   </body>
 </html>
