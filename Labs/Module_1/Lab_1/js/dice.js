@@ -1,5 +1,5 @@
 function RollDice(max){
-    let min = 1;
+    const min = 1;
     let randomNumber = Math.random();
     let result = Math.floor((randomNumber * max) + min);
 
@@ -35,4 +35,8 @@ function DoesRollDiceWork(){
 }
 
 let testResult = DoesRollDiceWork();
-console.log("roll dice test result: " + testResult);
+if (testResult){
+    console.log("roll dice test PASSED");
+} else{
+    console.error("roll dice test FAILED");
+}
