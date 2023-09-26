@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <header>
+      <nav>
+        <!-- works like <a href="/index.html">Home</a> -->
+        <a href="/">Home</a>
+      </nav>
+    </header>
+
+    <form method="POST" action="http://localhost:5500/profile">
+      <div>
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname" />
+      </div>
+      <div>
+        <label for="sname">Surname:</label>
+        <input type="text" id="sname" name="sname" />
+      </div>
+      <div>
+        <label for="cars">Choose a snack:</label><br>
+        <input type="radio" id="apple" name="fav_fruit" value="Apple" />
+        <label for="apple">Apple</label><br />
+        <input type="radio" id="banana" name="fav_fruit" value="Banana" />
+        <label for="banana">Banana</label><br />
+        <input type="radio" id="orange" name="fav_fruit" value="Orange" />
+        <label for="orange">Orange</label>
+      </div>
+
+      <div>
+        <label for="meal">Choose main meal:</label>
+        <select name="meal" id="meal">
+          <option value="burger">burger</option>
+          <option value="pizza">pizza</option>
+          <option value="sushi">sushi</option>
+          <option value="soup">soup</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="checkbox" id="veggies" name="veggies" />
+        <label for="veggies">veggies</label>
+      </div>
+      <button type="submit">Submit form</button>
+    </form>
+
+    <main></main>
+    <footer>Copyright 2021 &copy;</footer>
+  </body>
+</html>
