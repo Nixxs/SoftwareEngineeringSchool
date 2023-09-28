@@ -1,3 +1,65 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
 }
+
+.background-1 {
+    background: #f3f3f3;
+}
+
+.background-2 {
+    background: #8FC0A9;
+}
+
+.background-3 {
+    background: #C8D5B9;
+}
+
+.background-4 {
+    background:  #FAF3DD;
+}
+
+.h-80 {
+    height: 80px;
+}
+
+.h-175 {
+    height: 175px;
+}
+
+.w-80 {
+    width: 80px;
+}
+
+.mt-20 {
+    margin-top: 40px;
+}
+
+.header-container {
+    display: flex;
+}
+
+.footer-container {
+    display: flex;
+}
+
+.header-title-container {
+    flex: 2;
+}
+
+.header-contact-container {
+    flex: 1;
+}
+
+.flex-item-size-3 {
+    flex: 3;
+}
+
+.flex-item-size-4 {
+    flex: 4;
+}
+
+.font-color-1{
+    color: #383838;
+}
+
