@@ -23,6 +23,10 @@ body {
     height: 80px;
 }
 
+.h-30 {
+    height: 30px;
+}
+
 .h-175 {
     height: 175px;
 }
@@ -32,11 +36,21 @@ body {
 }
 
 .mt-20 {
-    margin-top: 40px;
+    margin-top: 20px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
+
+.contact-info {
+    line-height: 30px; 
+    vertical-align: middle;
 }
 
 .header-container {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .footer-container {
@@ -45,10 +59,14 @@ body {
 
 .header-title-container {
     flex: 2;
+    min-width: 300px;
 }
 
 .header-contact-container {
     flex: 1;
+    margin-left: 20px;
+    min-width: 300px;
+    min-height: 175px;
 }
 
 .flex-item-size-3 {
