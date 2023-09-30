@@ -3,6 +3,34 @@ body {
     margin: 0px;
 }
 
+p {
+    line-height: 1.3;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.list {
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+hr {
+    width: 95vw;
+    text-align: left;
+    border: 1px solid #a3a3a3;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+.subtitle-text {
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 5px;
+    font-size: large;
+}
+
 .background-1 {
     background: #e9e9e9;
 }
@@ -64,7 +92,7 @@ body {
     flex-wrap: wrap;
 }
 
-.header-title-container {
+.header-title {
     flex: 2;
     display: flex;
     min-width: 300px;
@@ -86,7 +114,7 @@ body {
     font-weight: lighter;
 }
 
-.header-contact-container {
+.header-contact {
     min-height: 175px;
     font-size: small;
 }
@@ -96,32 +124,38 @@ body {
     vertical-align: middle;
 }
 
-.body-container {
-    display: flex;
-}
-
 .body-profile {
-    flex: 1;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.body-profile-photo-container {
+.body-profile-photo {
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-.body-profile-text-container {
+.body-profile-text {
     flex: 3;
     text-align: justify;
-    font-size:0.8em;
+    font-size: 0.8em;
+    min-width: 200px;
 }
 
-.subtitle-text {
-    font-family: 'Mooli', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 5px;
-    font-size: large;
+.body-attributes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.body-attributes-skills{
+    flex: 1;
+    min-width: 300px;
+    padding-right: 15px;
+}
+
+.body-attributes-education{
+    flex: 1;
+    min-width: 300px;
 }
 
 .footer-container {
@@ -136,6 +170,3 @@ body {
     color: #383838;
 }
 
-p {
-    line-height: 1.3;
-}
