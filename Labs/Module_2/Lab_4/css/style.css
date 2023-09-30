@@ -87,9 +87,8 @@ body {
 }
 
 .header-contact-container {
-    flex: 1;
-    min-width: 300px;
     min-height: 175px;
+    font-size: small;
 }
 
 .contact-info {
@@ -114,7 +113,6 @@ body {
 
 .body-profile-text-container {
     flex: 3;
-    padding: 2%;
     text-align: justify;
     font-size:0.8em;
 }
