@@ -53,7 +53,7 @@ function getGreeting(name) {
     return 'Hello ' + name + '!';
 }
 console.log(getGreeting("nick"));
-getGreeting = (name) => 'Hello ' + name + '!';
+getGreeting = (name) => ('Hello ' + name + '!');
 console.log(getGreeting("<=nick=>"));
 
 // Question 6. 
