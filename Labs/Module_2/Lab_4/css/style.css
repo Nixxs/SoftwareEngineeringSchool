@@ -98,7 +98,20 @@ hr {
 
 .header-container {
     display: flex;
-    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1200px) {
+    .header-container {
+        flex-wrap: wrap;
+    }
+
+    .body-profile {
+        flex-wrap: wrap;
+    }
+
+    .body-attributes {
+        flex-wrap: wrap;
+    }
 }
 
 .header-title {
@@ -135,7 +148,6 @@ hr {
 
 .body-profile {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .body-profile-photo {
@@ -154,7 +166,6 @@ hr {
 
 .body-attributes {
     display: flex;
-    flex-wrap: wrap;
 }
 
 .body-attributes-skills{
