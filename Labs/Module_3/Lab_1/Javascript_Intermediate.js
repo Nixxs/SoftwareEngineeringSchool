@@ -177,21 +177,74 @@
 // console.log(0.3 == currencyAddition(0.1, 0.2)) // true
 // console.log(0.3 == currencyOperation(0.1, 0.2, '+', 2)) // true
 
-// Question 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. Your function should return an array containing only the unique values from duplicatesArray. Test with the following arrays and create another one of your own.
+// // Question 6. Create a function unique(duplicatesArray) which takes an array parameter that may include duplicates. Your function should return an array containing only the unique values from duplicatesArray. Test with the following arrays and create another one of your own.
 
-const unique = (duplicatesArray) => {
-    let noDuplicates = [];
+// const unique = (duplicatesArray) => {
+//     let noDuplicates = [];
 
-    for (let i=0; i < duplicatesArray.length ; i++){
-        if (!noDuplicates.includes(duplicatesArray[i])){
-            noDuplicates.push(duplicatesArray[i]);
+//     for (let i=0; i < duplicatesArray.length ; i++){
+//         if (!noDuplicates.includes(duplicatesArray[i])){
+//             noDuplicates.push(duplicatesArray[i]);
+//         }
+//     }
+
+//     return noDuplicates;
+// }
+
+// const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
+// const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+// console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+// console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+
+// Question 7. Use the following array of book objects to practice the array functions for map, find and filter. Test each of your answers to the below tasks.
+
+const books = [
+    { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+    { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+    { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+    { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+    { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+];
+
+// a) Write a function getBookTitle(bookId) that uses the find function to return the title of the book object with the matching id.
+
+const getBookTitle = (bookId) => {
+    let foundBook = books.find(
+        function(book){
+            return book.title.toLowerCase() == bookId.toLowerCase()
         }
-    }
-
-    return noDuplicates;
+    )
+    return foundBook;
 }
+console.log(getBookTitle("To Kill a Mockingbird"));
 
-const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
-const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
-console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
-console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+// b) Write a function getOldBooks() that uses the filter function to return all book objects written before 1950.
+
+const getOldBooks = (year) => {
+    let foundBooks = books.filter(
+        function(book){
+            return book.year <= year;
+        }
+    )
+    return foundBooks;
+}
+console.log(getOldBooks(1950));
+
+// c) Write a function addGenre() that uses the map function to add a new genre property to all of the above books, with the value ‘classic’.
+
+const addGenre = (genre) => {
+    let updatedBooks = books.map(
+        function(book){
+            book.genre = genre;
+            return book;
+        }
+    );
+    return updatedBooks;
+}
+console.log(addGenre("classic"));
+
+// d) (Extension) Write a function getTitles(authorInitial) that uses map and filter together to return an array of book titles for books written by authors whose names start with authorInitial.
+
+
+
+console.log("debug");
