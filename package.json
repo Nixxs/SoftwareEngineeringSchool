@@ -1,0 +1,19 @@
+{
+  "name": "softwareengineeringschool",
+  "version": "1.0.0",
+  "description": "This is a repo to store my instituit of data software engineering class labs, projects and exercises.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nixxs/SoftwareEngineeringSchool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nixxs/SoftwareEngineeringSchool/issues"
+  },
+  "homepage": "https://github.com/Nixxs/SoftwareEngineeringSchool#readme"
+}
