@@ -33,6 +33,8 @@ function truncate (textString, maxLength){
 console.log(truncate('This text will be truncated if it is too long', 25))
 // This text will be truncat...
 
+
+
 // Question 3. Use the following animals array for the below tasks. Test each one by printing the result to the console. 
 
 // a) Add 2 new values to the end
@@ -71,6 +73,15 @@ function findMatchingAnimals(beginsWith){
     return filteredAnimals;
 }
 
+function findMatchingAnimalsFilter(beginsWith){
+    let filteredAnimals = animals.filter(function(animal){
+        let animalString = animal.toLowerCase();
+        let inputStringLowerCase = beginsWith.toLowerCase();
+        return  animalString.startsWith(inputStringLowerCase)
+    })
+    return filteredAnimals;
+}
+
 console.log(findMatchingAnimals("ca"));
 console.log(animals);
 
@@ -80,18 +91,23 @@ console.log(animals);
 
 function camelCase(cssProp){
     let words = cssProp.split("-");
-    let firstWord = words[0];
-    let otherWords = words.slice(1);
 
-    let outputCamelCase = firstWord;
-    for (i in otherWords) {
-        let firstLetter = otherWords[i][0].toUpperCase();
-        let otherLetters = otherWords[i].slice(1);
-        let newWord = firstLetter + otherLetters;
-        outputCamelCase += newWord;
+    if (words.length < 2){
+        return cssProp;
+    } else {
+        let firstWord = words[0];
+        let otherWords = words.slice(1);
+    
+        let outputCamelCase = firstWord;
+        for (i in otherWords) {
+            let firstLetter = otherWords[i][0].toUpperCase();
+            let otherLetters = otherWords[i].slice(1);
+            let newWord = firstLetter + otherLetters;
+            outputCamelCase += newWord;
+        }
+    
+        return outputCamelCase;
     }
-
-    return outputCamelCase;
 }
 
 //b) Create variants of the camelCase function that use different types of for loops, and
@@ -111,13 +127,15 @@ function camelCase(cssProp){
     return outputCamelCase;
 }
 
+console.log(camelCase("margin-left"));
+
 //c) with and without the conditional operator.
 
 function camelCase(cssProp){
     let words = cssProp.split("-");
     let firstWord = words[0];
 
-    let outputCamelCase = firstWord;
+    let outputCamelCase = firstWord.toLowerCase();
     for (i in words) {
         if (words[i] === firstWord){
             //pass
@@ -161,17 +179,21 @@ function currencyOperation(float1, float2, operation, numDecimals){
     switch (operation){
         case "+":
             result = fixedNumber1 + fixedNumber2;
-            return parseFloat(result.toFixed(numDecimals));
+            break;
         case "-":
             result = fixedNumber1 - fixedNumber2;
-            return parseFloat(result.toFixed(numDecimals));
+            break;
         case "/":
             result = fixedNumber1 / fixedNumber2;
-            return parseFloat(result.toFixed(numDecimals));
+            break;
         case "*":
             result = fixedNumber1 * fixedNumber2;
-            return parseFloat(result.toFixed(numDecimals));
+            break;
+        default:
+            throw `not a supported operator: ${operation}`
     }
+    
+    return parseFloat(result.toFixed(numDecimals));
 }
 
 console.log(0.3 == currencyAddition(0.1, 0.2)) // true
@@ -211,12 +233,12 @@ const books = [
 const getBookTitle = (bookId) => {
     let foundBook = books.find(
         function(book){
-            return book.title.toLowerCase() == bookId.toLowerCase()
+            return book.id == bookId;
         }
     )
-    return foundBook;
+    return foundBook.title;
 }
-console.log(getBookTitle("To Kill a Mockingbird"));
+console.log(getBookTitle(2));
 
 // b) Write a function getOldBooks() that uses the filter function to return all book objects written before 1950.
 

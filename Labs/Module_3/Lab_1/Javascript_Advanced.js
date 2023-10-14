@@ -51,9 +51,24 @@ const printFibonacci = () => {
 
 //b) Write a new version printFibonacciTimeouts() that uses nested setTimeout calls to do the same thing
 
+function printFibonacciTimeouts() {
+    let num1 = 0;
+    let num2 = 1;
+    let fibonacciNum = 0;
+
+    setTimeout(function(){
+        fibonacciNum = num1 + num2;
+        num1 = num2;
+        num2 = fibonacciNum;
+        console.log(fibonacciNum);
+    }, 1000);
+    
+}
+//printFibonacciTimeouts(); commented out so it doesn't run forever
+
 //c) Extend one of the above functions to accept a limit argument, which tells it how many numbers to print before stopping.
 
-function printFibonacciTimeouts(limit) {
+function printFibonacciTimeoutsLimit(limit) {
     let num1 = 0;
     let num2 = 1;
     let fibonacciNum = 0;
@@ -67,7 +82,7 @@ function printFibonacciTimeouts(limit) {
         }, 1000);
     }
 }
-printFibonacciTimeouts(50);
+printFibonacciTimeoutsLimit(50);
 
 // Question 5. The following car object has several properties and a method which uses them to print a description. When calling the function normally this works as expected, but using it from within setTimeout fails. Why?
 
@@ -86,8 +101,7 @@ car.description(); //works
 setTimeout(function(){car.description()}, 200); //fails
 
 //b) Change the year for the car by creating a clone of the original and overriding it
-let newCar = {...car};
-newCar.year = 2023;
+car = {...car, year : 2023};
 
 //c) Does the delayed description() call use the original values or the new values from b)? Why? 
 // answer: its using the orignal values because I cloned it with a spread. it's not pointing to the same object.
@@ -292,8 +306,13 @@ fetchURLData('https://jsonplaceholder.typicode.com/todos/1')
 async function fetchURLDataAsync(url) {
     try {
         let data = await fetch(url);
-        let jsonData = await data.json()
-        return jsonData;
+
+        if (data.status === 200){
+            let jsonData = await data.json()
+            return jsonData;
+        } else {
+            return "unexpected response status"
+        }
     } catch (error) {
         console.log(error);
     }

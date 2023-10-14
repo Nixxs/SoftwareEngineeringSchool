@@ -42,7 +42,7 @@ if (1) console.log('positive is true') // yes
 
 let a = 2, b = 3;
 let result = `${a} + ${b} is `;
-a + b < 10 ? result += "less than 10" : result += "greater than 10";
+result += a + b < 10 ? "less than 10" : "greater than 10";
 console.log(result);
 
 // Question 5. Rewrite the following function using: 
@@ -113,6 +113,7 @@ const basketballGame = {
     fullTime() {
         console.log('Fulltime score is '+this.score);
         console.log('Fulltime fouls is '+this.foul);
+        return this;
     }
 }
 //modify each of the above object methods to enable function chaining as below:
@@ -138,7 +139,7 @@ const car = {
 }
 function dataPrinter(data){
     for (let key in data){
-        console.log(data[key]);
+        console.log(`${key} : ${data[key]}`);
     }
 }
 dataPrinter(sydney);
@@ -188,7 +189,7 @@ function Person(name, age) {
     this.name = name;
     this.age = age;
     this.human = true;
-    this.canDrive = () => this.age >= drivingAge ? true : false;
+    this.canDrive = () => this.age >= drivingAge;
 }
 class PersonClass {
     constructor (_name, _age) {
