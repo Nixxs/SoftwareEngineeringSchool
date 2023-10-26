@@ -33,6 +33,28 @@ delayMsg('#4: Not delayed at all')
 let id = setTimeout(delayMsg, 10000, '#3: Delayed by 0ms');
 clearTimeout(id);
 
+// Question 3. Create a debounce(func) decorator, which is a wrapper that takes a function func and suspends calls to func until there's 1000 milliseconds of inactivity. After this 1 second pause, the most recent call to func should be executed and any others ignored.
+
+function debounce(func){
+    let timer;
+
+    return function (...args){
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+            func.apply(this, args)
+        }, 1000);
+    }
+}
+
+function printMe() {
+    console.log('printing debounced message')
+}
+printMe = debounce(printMe); //create this debounce function for a)
+//fire off 3 calls to printMe within 300ms - only the LAST one should print, after 1000ms of no calls
+setTimeout( printMe, 100);
+setTimeout( printMe, 200);
+setTimeout( printMe, 300);
+
 // 4. The Fibonacci sequence of numbers is a famous pattern where the next number in the sequence is the sum of the previous 2. e.g. 1, 1, 2, 3, 5, 8, 13, 21, 34, etc.
 //a) Write a function printFibonacci() using setInterval that outputs a number in the Fibonacci sequence every second.
 
