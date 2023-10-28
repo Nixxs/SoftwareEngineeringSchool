@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e3f2fd;
+      }
+      .card {
+        padding: 10px;
+      }
+      .card-title {
+        font-weight: 600;
+        font-size: 3em;
+        padding: 0 0 10px 0;
+      }
+      .card-description {
+        font-weight: 400;
+        font-size: 2em;
+      }
+      .artist-name {
+        font-weight: 600;
+        font-size: 3em;
+        padding: 0 0 10px 0;
+        color: rgb(3, 51, 99);
+      }
+    </style>
+  </head>
+  <body>
+    <template id="card-template">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title"></div>
+          <div class="card-text"></div>
+        </div>
+      </div>
+    </template>
+    <div id="card-list"></div>
+
+    <template id="artist-template">
+        <div class="card">
+          <div class="card-body">
+            <div class="artist-name"></div>
+            <div class="artist-portfolio"></div>
+          </div>
+        </div>
+    </template>
+
+    <template id="art-template">
+        <div class="card">
+          <div class="art-body">
+            <div class="art-name"></div>
+            <div class="art-url"></div>
+          </div>
+        </div>
+    </template>
+    <div id="artist-list"></div>
+
+    <script>
+      function addCard(title, text) {
+        // clone the template
+        const template = document
+          .getElementById("card-template")
+          .content.cloneNode(true);
+        // populate the template
+        template.querySelector(".card-title").innerText = title;
+        template.querySelector(".card-text").innerText = text;
+        // include the populated template into the page
+        document.querySelector("#card-list").appendChild(template);
+      }
+
+      // exercise 2
+      const data = [
+        { name: "bob", age: 23 },
+        { name: "alice", age: 39 },
+        { name: "Nick", age: 39 },
+      ];
+
+      for (let record in data) {
+        let titleValue = `Employee: ${data[record].name}`;
+        let textValue = `Name: ${data[record].name}\nAge: ${data[record].age}`;
+        addCard(titleValue, textValue);
+      }
+
+      const vanGogh = {
+        name: "Van Gogh",
+        portfolio: [
+          {
+            title: "portrait",
+            url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image",
+          },
+          {
+            title: "sky",
+            url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg",
+          },
+        ],
+      };
+
+      const daVinci = {
+        name: "Leonardo da Vinci",
+        portfolio: [
+          {
+            title: "Vitruvian Man",
+            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/800px-Da_Vinci_Vitruve_Luc_Viatour.jpg",
+          }
+        ],
+      };
+
+      function addArtist(artist) {
+        // clone the template
+        const template = document
+          .getElementById("artist-template")
+          .content.cloneNode(true);
+        // populate the template
+        template.querySelector(".artist-name").innerText = artist.name;
+
+        for (let art in artist.portfolio){
+            const artTemplate = document
+            .getElementById("art-template")
+            .content.cloneNode(true);
+
+            artTemplate.querySelector(".art-name").innerHTML = `<b>${artist.portfolio[art].title}</b>`;
+            artTemplate.querySelector(".art-url").innerHTML = `<img src=${artist.portfolio[art].url} width="300"/>`;
+            template.querySelector(".artist-portfolio").appendChild(artTemplate);
+        }
+
+        // include the populated template into the page
+        document.querySelector("#artist-list").appendChild(template);
+      }
+
+      let artists = [vanGogh, daVinci]
+      for (let artist in artists){
+        addArtist(artists[artist]);
+      }
+    </script>
+  </body>
+</html>
