@@ -13,11 +13,17 @@ function addCard(title, text) {
 function getData(){
     fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
     .then((response) => response.json())
-    .then((json) => console.log(json));
-}
+    .then(
+        function(json){
+            for (let record in json){
+                const title = json[record].title;
+                const content = json[record].body;
+                
+                addCard(title, content);
+            }
 
-addCard("the title", "the text content");
-addCard("the title", "the text content");
-addCard("the title", "the text content");
-addCard("the title", "the text content");
-addCard("the title", "the text content");
+            console.log(json);
+        }
+    );
+}
+getData();

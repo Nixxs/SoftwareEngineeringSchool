@@ -2,3 +2,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #e3f2fd;
 }
+
+.fixed-card {
+    height: 300px;
+    overflow: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.fixed-card::-webkit-scrollbar {
+    display: none;
+}
