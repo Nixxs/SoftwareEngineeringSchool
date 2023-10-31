@@ -34,8 +34,34 @@
             fetch("https://fakestoreapi.com/products")
                 .then((response) => response.json())
                 .then((json) => {
-                    console.log(json);
+                    const categoryData = json.map(
+                        function(record){
+                            return record.category;
+                        }
+                    );
+                    const uniqueCategories = Array.from(new Set(categoryData));
+                    
+                    let categoryCounts = [];
+                    uniqueCategories.forEach(
+                        function(category){
+                            const count = categoryData.reduce(
+                                function(acc, value){
+                                    if (value === category){
+                                        return acc += 1;
+                                    } else {
+                                        return acc;
+                                    }
+                                }
+                            ,0);
+
+                            categoryCounts.push(count);
+                        }
+                    )
+
+                    options.xAxis.data = uniqueCategories;
+                    options.series[0].data = categoryCounts;
                     // use this JSON to find and set correct option data for the chart
+
                 })
                 .then(() => {
                     // Display the chart

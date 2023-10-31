@@ -10,20 +10,18 @@ function addCard(title, text) {
     document.querySelector("#card-list").appendChild(template);
 }
 
+function handleData(data){
+    for (let record in data){
+        const title = data[record].title;
+        const content = data[record].body;
+        
+        addCard(title, content);
+    }
+}
+
 function getData(){
     fetch('https://jsonplaceholder.typicode.com/posts?_limit=10')
     .then((response) => response.json())
-    .then(
-        function(json){
-            for (let record in json){
-                const title = json[record].title;
-                const content = json[record].body;
-                
-                addCard(title, content);
-            }
-
-            console.log(json);
-        }
-    );
+    .then((json) => handleData(json));
 }
 getData();
