@@ -12,14 +12,26 @@
 <body>
     <template id="card-template" >
         <div class="col-sm-3 p-0">
-            <div class="card">
-                <div class="card-body ">
-                    <h3 class="card-title"></h3>
+            <div class="card fixed-card">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <span class="card-img"></span>
+                    <p class="card-price"></p>
                     <p class="card-text"></p>
                 </div>
             </div>
         </div>
     </template>
+    <div class="row m-2">
+        <div class="col-9">
+            <select class="form-select" title="category-select" id="category-select" name="category-select">
+                <option value="all">All Products</option>
+            </select>
+        </div>
+        <div class="col-3">
+            <button type="button" class="btn btn-primary" onclick="filterProducts()">Apply Filter</button>
+        </div>
+    </div>
     <div id="card-list" class="row m-2"></div>
 </body>
 
