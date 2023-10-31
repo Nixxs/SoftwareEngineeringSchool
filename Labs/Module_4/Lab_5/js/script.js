@@ -20,7 +20,7 @@ class News {
     }
 
     addStory(title, content) {
-        let allIDs = this.stories.map(function (story) {
+        const allIDs = this.stories.map(function (story) {
             return story.id;
         });
         let maxID = Math.max(allIDs);
@@ -35,12 +35,19 @@ class News {
 }
 let news = new News();
 
-function updateNews() {
+function addNewStory(){
+    const title = document.getElementById("new-story-title").value;
+    const content = document.getElementById("new-story-content").value;
 
+    news.addStory(title, content);
+    updateNews();
+}
+
+function updateNews() {
     document.querySelector("#news-list").innerHTML = "";
     for (let story in news.stories) {
-        let storyTitle = news.stories[story].title;
-        let storyContent = news.stories[story].title;
+        const storyTitle = news.stories[story].title;
+        const storyContent = news.stories[story].content;
 
         const template = document
             .getElementById("news-template")

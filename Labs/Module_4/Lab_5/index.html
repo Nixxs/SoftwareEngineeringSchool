@@ -21,6 +21,19 @@
         </div>
     </template>
     <div id="news-list" class="row"></div>
+    <div class="add-story-container row">
+        <div class="col-sm-6">
+            <label for="new-story-title">Story Title</label>
+            <input type="text" id="new-story-title" name="new-story-title" placeholder="new story title" class="form-control">
+        </div>
+        <div class="col-sm-6">
+            <label for="new-story-content">Story Content</label>
+            <input type="text" id="new-story-content" name="new-story-content" placeholder="new story content" class="form-control">
+        </div>
+        <div class="mt-1">
+            <button type="text" id="add-story-button" name="add-story-button" class="btn btn-primary" onclick="addNewStory();">Add Story</button>
+        </div>
+    </div>
 </body>
 
 </html>
