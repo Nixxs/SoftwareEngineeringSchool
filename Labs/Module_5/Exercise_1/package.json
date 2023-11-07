@@ -1,0 +1,15 @@
+{
+  "name": "exercise_1",
+  "version": "1.0.0",
+  "description": "module 5 - exercise 1 making web servers",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo she'll be right"
+  },
+  "author": "nicholas chai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
