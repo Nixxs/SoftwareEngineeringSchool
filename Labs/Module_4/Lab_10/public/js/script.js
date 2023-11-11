@@ -57,7 +57,7 @@ function filterProducts(){
 }
 
 function getData(){
-    fetch("https://fakestoreapi.com/products")
+    fetch("http://localhost:3000/products/getAll")
     .then((response) => response.json())
     .then((json) => setupDisplayData(json));
 }
