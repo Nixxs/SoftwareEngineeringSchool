@@ -1,6 +1,33 @@
-<html>
-  <title>My first page</title>
+<html lang="en">
+  <head>
+    <title>Calculator Example</title>
+    <script src="js/calculate.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
   <body>
-    <h1>Hello Friends</h1>
+    <div>
+      <div class="calculator">
+        <div class="number-input two-cols">
+            <input type="text" id="input-num-one" name="input-num-one">
+        </div>
+        <div class="operator-selector">
+            <select title="operator-input" id="operator-input" name="operator-input">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+        </div>
+        <div class="number-input two-cols">
+            <input type="text" id="input-num-two" name="input-num-two">
+        </div>
+        <div class="equals-button">
+            <button onclick="calculate()">=</button>
+        </div>
+        <div class="results-output two-cols">
+            <input type="text" id="result-output" name="result-output" readonly>
+        </div>
+    </div>
+    </div>
   </body>
 </html>
