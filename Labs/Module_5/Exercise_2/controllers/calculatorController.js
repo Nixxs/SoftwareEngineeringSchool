@@ -7,8 +7,7 @@ const add = (req, res) => {
 
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    res.status(200);
-    res.json({ result: calc.add(number1, number2) });
+    res.status(200).json({ result: calc.add(number1, number2) });
 }
 
 const subtract = (req, res) => {
@@ -16,8 +15,7 @@ const subtract = (req, res) => {
     
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    res.status(200);
-    res.json({ result: calc.subtract(number1, number2) });
+    res.status(200).json({ result: calc.subtract(number1, number2) });
 }
 
 const divide = (req, res) => {
@@ -25,8 +23,7 @@ const divide = (req, res) => {
     
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    res.status(200);
-    res.json({ result: calc.divide(number1, number2) });
+    res.status(200).json({ result: calc.divide(number1, number2) });
 }
 
 const multiply = (req, res) => {
@@ -34,8 +31,7 @@ const multiply = (req, res) => {
     
     let number1 = parseInt(req.query.num1);
     let number2 = parseInt(req.query.num2);
-    res.status(200);
-    res.json({ result: calc.multiply(number1, number2) });
+    res.status(200).json({ result: calc.multiply(number1, number2) });
 }
 
 module.exports = {
