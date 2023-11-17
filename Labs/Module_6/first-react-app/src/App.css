@@ -1,3 +1,48 @@
+.componentBox {
+  border: 1px solid #aaa;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  background: #3d3d3d;
+  border-radius: 6px;
+}
+
+.FancyBorder {
+  border: 1px solid #aaa;
+}
+
+.FancyBox {
+  --mask: linear-gradient(#000 0 0) 50% / calc(100% - 37px) calc(100% - 37px)
+      no-repeat,
+    radial-gradient(farthest-side, #000 98%, #0000) 0 0/2em 2em round;
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+  padding: 2em;
+  background: linear-gradient(
+      135deg,
+      #1f005c,
+      #5b0060,
+      #870160,
+      #ac255e,
+      #ca485c,
+      #ffb56b
+    )
+    fixed;
+  color: white;
+}
+.FancyBox-blue {
+  background: linear-gradient(
+      135deg,
+      #140061,
+      #50006e,
+      #64018c,
+      #6955ff,
+      #4684ff,
+      #1fa7ff
+    )
+    fixed;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
