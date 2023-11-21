@@ -18,18 +18,20 @@ function SingleCat(props){
 function BigCats(props){
     let id = 0;
     return (
-        <ul>
-            {cats.map(function(cat) {
-                id += 1;
-                return (                      
-                    <SingleCat
-                        key={id} 
-                        name={cat.name}
-                        latinName={cat.latinName}
-                    />
-                )
-            })}
-        </ul>
+        <div className="componentBox">
+            <ul>
+                {cats.map(function(cat) {
+                    id += 1;
+                    return (                      
+                        <SingleCat
+                            key={id} 
+                            name={cat.name}
+                            latinName={cat.latinName}
+                        />
+                    )
+                })}
+            </ul>
+        </div>
     );
 }
 

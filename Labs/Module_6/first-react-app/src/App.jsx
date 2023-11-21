@@ -11,6 +11,7 @@ import Comment from "./Comment";
 import {Callout, NormalHTML} from "./Callout";
 import MoviesList from "./MoviesList";
 import BigCats from "./BigCats";
+import MoodChanger from "./MoodChanger";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -98,6 +99,7 @@ function App() {
         text={comment.text}
       />
 
+      {/* slide 41 */}
       <Callout
         title="Nested React Component"
         message="Simple message with a fancy box applied via composition"
@@ -105,11 +107,18 @@ function App() {
         <FullName first="Elon" last="Musk" />
       </Callout>
 
+      {/* for react comparison purposes */}
       <NormalHTML />
 
+      {/* slide 47 */}
       <MoviesList />
 
+      {/* slide 48 */}
       <BigCats />
+
+      {/* slide 50 */}
+      <MoodChanger />
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
