@@ -12,6 +12,9 @@ import {Callout, NormalHTML} from "./Callout";
 import MoviesList from "./MoviesList";
 import BigCats from "./BigCats";
 import MoodChanger from "./MoodChanger";
+import Emoji from "./Emoji";
+import BirthdayTranslator from "./BirthdayTranslator";
+import Calculator from "./Calculator";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -114,10 +117,21 @@ function App() {
       <MoviesList />
 
       {/* slide 48 */}
+      {/* slide 73 */}
+      {/* slide 81 */}
       <BigCats />
 
       {/* slide 50 */}
       <MoodChanger />
+
+      {/* slide 59 */}
+      <Emoji />
+
+      {/* slide 61 */}
+      <BirthdayTranslator />
+
+      {/* slide 90 */}
+      <Calculator />
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>

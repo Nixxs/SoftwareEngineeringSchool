@@ -66,3 +66,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Style the input fields */
+input[type="text"] {
+  padding: 5px;
+  margin-bottom: 5px; /* Add space between the input fields */
+  border: 1px solid #ddd; /* Add a border to the input fields */
+}
+
+input[type="number"],select  {
+  padding: 5px;
+  margin-bottom: 5px; /* Add space between the input fields */
+  border: 1px solid #ddd; /* Add a border to the input fields */
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  padding: 10px;
+  background-color: #333; /* Dark background for the submit button */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Adjust line height for better readability */
+input {
+  line-height: 1.4;
+}
