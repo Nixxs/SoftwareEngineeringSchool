@@ -20,8 +20,6 @@ function Emoji(){
             <p>
                 Current Mood:</p>
                 <p>{mood}</p>
-            
-
             <button onClick={changeMood}>Toggle Mood</button>
         </div>
     )
