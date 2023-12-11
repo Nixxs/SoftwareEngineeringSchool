@@ -15,6 +15,7 @@ import MoodChanger from "./MoodChanger";
 import Emoji from "./Emoji";
 import BirthdayTranslator from "./BirthdayTranslator";
 import Calculator from "./Calculator";
+import EmojiProvider from "./EmojiContext"
 
 function App() {
   const [count, setCount] = useState(0);
@@ -125,7 +126,10 @@ function App() {
       <MoodChanger />
 
       {/* slide 59 */}
-      <Emoji />
+      <EmojiProvider>
+        <Emoji />
+      </EmojiProvider>
+      
 
       {/* slide 61 */}
       <BirthdayTranslator />

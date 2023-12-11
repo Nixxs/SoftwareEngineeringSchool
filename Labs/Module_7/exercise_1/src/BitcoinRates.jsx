@@ -1,33 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useFetchExchangeRate } from "./hooks/useFetchExchangeRate";
 
 const currencies = ["USD", "AUD", "NZD", "GBP", "EUR", "SGD"];
 
 function BitcoinRates() {
   const [currency, setCurrency] = useState(currencies[0]);
-  const [exchangeRate, setExchangeRate] = useState(null);
-
-  useEffect(() => {
-    let ignore = false;
-
-    async function fetchExchangeRate() {
-        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`);
-        const data = await response.json();
-        console.log(data);
-
-        if (ignore == false){
-          setExchangeRate(data.bitcoin[currency.toLowerCase()]);
-        }
-    }
-
-    fetchExchangeRate();
-
-    return () => {
-        ignore = true;
-        console.log("this never runs");
-    };
-      
-  }, [currency]);
-
+  const exchangeRate = useFetchExchangeRate(currency);
+ 
   const options = currencies.map((curr) => (
     <option value={curr} key={curr}>
       {curr}

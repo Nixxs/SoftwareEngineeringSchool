@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import BitcoinRates from './BitcoinRates'
+import FruitBasket from './ReducerTest'
+import EmojiProvider from "./EmojiContext"
+import Emoji from "./Emoji"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +25,11 @@ function App() {
 
       <BitcoinRates />
 
+      <FruitBasket />
+
+      <EmojiProvider>
+        <Emoji />
+      </EmojiProvider>
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
