@@ -6,20 +6,66 @@ const Like = require("./likes"); //require the model
 
 async function init() {
   // associations
-  User.hasMany(Post);
-  Post.belongsTo(User);
-
-  User.hasMany(Comment);
-  Comment.belongsTo(User);
-
-  User.hasMany(Like);
-  Like.belongsTo(User);
-
-  Post.hasMany(Comment);
-  Comment.belongsTo(Post);
-
-  Post.hasMany(Like);
-  Like.belongsTo(Post);
+  User.hasMany(Post, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    },
+});
+Post.belongsTo(User, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    }
+});
+User.hasMany(Comment, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    },
+});
+Comment.belongsTo(User, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    },
+});
+User.hasMany(Like, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    }
+});
+Like.belongsTo(User, {
+    foreignKey: {
+        name: "userId",
+        allowNull: false,
+    },
+});
+Post.hasMany(Comment, {
+    foreignKey: {
+        name: "postId",
+        allowNull: false,
+    },
+});
+Comment.belongsTo(Post, {
+    foreignKey: {
+        name: "postId",
+        allowNull: false,
+    },
+});
+Post.hasMany(Like, {
+    foreignKey: {
+        name: "postId",
+        allowNull: false,
+    },
+});
+Like.belongsTo(Post, {
+    foreignKey: {
+        name: "postId",
+        allowNull: false,
+    }
+});
 
   await User.sync();
   await Post.sync();

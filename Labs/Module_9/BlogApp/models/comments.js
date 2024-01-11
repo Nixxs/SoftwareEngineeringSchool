@@ -15,18 +15,10 @@ Comment.init({
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  postId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   date: {
     type: DataTypes.DATEONLY,
     allowNull: false,
-    defaultValue: DataTypes.NOW 
+    defaultValue: DataTypes.NOW
   },
 }, {
   sequelize: sequelizeInstance,

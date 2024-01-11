@@ -1,9 +1,9 @@
 "use strict";
-const UserModel = require("../models/users");
+const Models = require("../models");
 
 // finds all users in DB, then sends array as response
-const getUsers = (res) => {
-  UserModel.findAll({})
+const getLikes = (req, res) => {
+  Models.Like.findAll({where: {userId: req.params.userid}})
     .then((data) => {
       res.send({ result: 200, data: data });
     })
@@ -14,10 +14,9 @@ const getUsers = (res) => {
 };
 
 // uses JSON from request body to create new user in DB
-const createUser = (data, res) => {
-  UserModel.create(data)
+const createLike = (data, res) => {
+  Models.Like.create(data)
     .then((data) => {
-        
       res.send({ result: 200, data: data });
     })
     .catch((err) => {
@@ -26,25 +25,9 @@ const createUser = (data, res) => {
     });
 };
 
-// uses JSON from request body to update user ID from params
-const updateUser = (req, res) => {
-  UserModel.update(req.body, { where: { id: req.params.id } })
-    .then((data) => {
-      UserModel.findOne({ where: { id: data } })
-        .then((user) => {
-                res.send({ result: 200, data: user })
-            }
-        )
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send({ result: 500, error: err.message });
-    });
-};
-
 // deletes user matching ID from params
-const deleteUser = (req, res) => {
-  UserModel.destroy({ where: { id: req.params.id } })
+const deleteLike = (req, res) => {
+  Models.Like.destroy({ where: { id: req.params.id } })
     .then((data) => {
       res.send({ result: 200, data: data });
     })
@@ -55,9 +38,8 @@ const deleteUser = (req, res) => {
 };
 
 module.exports = {
-  getUsers,
-  createUser,
-  updateUser,
-  deleteUser,
+  getLikes,
+  createLike,
+  deleteLike
 };
 // ++ Test updating and deleting a user using Postman

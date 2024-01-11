@@ -16,20 +16,16 @@ Post.init({
   },
   description: {
     type: DataTypes.TEXT,
-    allowNull: true, 
-  },
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
   },
   date: {
     type: DataTypes.DATEONLY,
     allowNull: false,
-    defaultValue: DataTypes.NOW 
+    defaultValue: DataTypes.NOW
   },
 }, {
   sequelize: sequelizeInstance,
-  modelName: 'posts', 
+  modelName: 'posts',
   timestamps: false,
   freezeTableName: true,
 });
