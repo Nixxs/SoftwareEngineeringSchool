@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Socket Chat App</title>
+  </head>
+  <body>
+    <h2>Welcome to Socket Chat</h2>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      let socket = io();
+      socket.on("connection", (msg) => {
+        let userid = msg.username;
+        console.log(`user connected: ${userid}`);
+      });
+
+      socket.on("user-disconnect", (msg) => console.log(msg));
+      socket.on("user-message", (msg) => console.log(msg));
+
+      function send_message(){
+        let message = document.getElementById("input_text").value
+        document.getElementById("input_text").value = "";
+
+        socket.emit("user-message", message);
+      }
+    </script>
+
+    <input id="input_text" type="text"></input>
+    <button onclick="send_message()">send</button>
+
+    <script>
+        document.getElementById('input_text').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                send_message();
+            }
+        });
+    </script>
+  </body>
+</html>
